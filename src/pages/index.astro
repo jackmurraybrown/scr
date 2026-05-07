@@ -43,9 +43,10 @@ try {
       weekday: "short",
       day: "numeric",
       month: "long",
+      year: "numeric",
       timeZone: tz,
     }).formatToParts(new Date(show.start));
-    const key = `${parts.find((p) => p.type === "weekday")?.value} ${parts.find((p) => p.type === "day")?.value} ${parts.find((p) => p.type === "month")?.value}`;
+    const key = `${parts.find((p) => p.type === "weekday")?.value} ${parts.find((p) => p.type === "day")?.value} ${parts.find((p) => p.type === "month")?.value} ${parts.find((p) => p.type === "year")?.value}`;
     if (!days[key]) days[key] = [];
     days[key].push(show);
   }
