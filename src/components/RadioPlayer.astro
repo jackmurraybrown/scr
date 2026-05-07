@@ -95,18 +95,16 @@
       .then((r) => r.json())
       .then((data) => {
         const result = data?.result;
-        liveDot.style.display = result?.status === "live" ? "" : "none";
+        liveDot.style.display = result?.content ? "" : "none";
         let title, artist, artwork;
 
         if (result?.status === "schedule") {
           title =
             result?.metadata?.title || result?.content?.title || "On Air";
-          artist =
-            result?.metadata?.artist || "Seyðisfjörður Community Radio";
+          artist = result?.metadata?.artist || null;
           artwork = result?.content?.cover_image || result?.content?.artwork;
         } else {
-          artist =
-            result?.metadata?.artist || "Seyðisfjörður Community Radio";
+          artist = result?.metadata?.artist || null;
           title = result?.metadata?.title || "On Air";
           artwork =
             result?.metadata?.artwork || result?.metadata?.cover_image;
