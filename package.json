@@ -12,7 +12,8 @@
     "astro": "^6.1.9",
     "fast-xml-parser": "^4.5.0",
     "rehype-external-links": "^3.0.0",
-    "remark-breaks": "^4.0.0"
+    "remark-breaks": "^4.0.0",
+    "sp-supermarquee": "^3.1.2"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.8",

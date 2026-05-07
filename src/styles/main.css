@@ -8,6 +8,7 @@
     url("/fonts/TimesNewArialVF.woff") format("woff");
   font-style: oblique -90deg 90deg;
   font-weight: 0 1000;
+  font-display: swap;
 }
 
 @theme {

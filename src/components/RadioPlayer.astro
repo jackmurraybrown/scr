@@ -67,6 +67,8 @@
 </div>
 
 <script>
+  import SuperMarquee from "sp-supermarquee";
+
   const playBtn = document.getElementById("play-radio-btn")!;
   const audio = document.getElementById("radio-audio") as HTMLAudioElement;
   const iconPlay = document.getElementById("icon-play")!;
@@ -115,7 +117,7 @@
             ? artist + " — " + title
             : title;
 
-        new (window as any).SuperMarquee(titleContainer, {
+        new SuperMarquee(titleContainer, {
           content: lineSVG + "On Air: " + label,
           speed: 0.1,
         });
@@ -133,7 +135,7 @@
         }
       })
       .catch(() => {
-        new (window as any).SuperMarquee(titleContainer, {
+        new SuperMarquee(titleContainer, {
           content: lineSVG + "On Air",
           speed: 0.1,
         });
