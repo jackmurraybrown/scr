@@ -1,5 +1,4 @@
 ---
-import { Image } from "astro:assets";
 import token6Img from "../assets/images/token6.png";
 import token8Img from "../assets/images/token8.png";
 import roseImg from "../assets/images/rose.png";
@@ -149,14 +148,18 @@ const { tracks, archiveHtml } = Astro.props;
     <audio id="archive-audio" preload="none" aria-label="Archive audio player" data-rose-src={roseImg.src}
     ></audio>
   </div>
-  <Image
-    src={token6Img}
+  <img
+    src={token6Img.src}
+    width={token6Img.width}
+    height={token6Img.height}
     alt=""
     class="block w-[150px] lg:w-[200px] absolute top-[-5%] left-[-10%] lg:top-[5%] lg:left-[-20%]"
     loading="lazy"
   />
-  <Image
-    src={token8Img}
+  <img
+    src={token8Img.src}
+    width={token8Img.width}
+    height={token8Img.height}
     alt=""
     class="block w-[60px] lg:w-[80px] absolute top-[70%] left-[-85%]"
     loading="lazy"

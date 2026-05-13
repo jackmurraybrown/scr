@@ -1,5 +1,4 @@
 ---
-import { Image } from "astro:assets";
 import { getCollection, render } from "astro:content";
 import { XMLParser } from "fast-xml-parser";
 import MainLayout from "../layouts/MainLayout.astro";
@@ -124,8 +123,10 @@ const underlineSVGs = [
 ---
 
 <MainLayout>
-  <Image
-    src={antennaImg}
+  <img
+    src={antennaImg.src}
+    width={antennaImg.width}
+    height={antennaImg.height}
     alt=""
     class="hidden lg:block fixed top-0 left-0 w-1/2 h-screen object-cover -z-10"
     loading="eager"
@@ -134,14 +135,18 @@ const underlineSVGs = [
   <div class="grid grid-cols-1 lg:grid-cols-2 gap-y-32">
     <!-- Rose / hero -->
     <div class="hidden lg:block relative lg:col-start-1 pointer-events-none">
-      <Image
-        src={token1Img}
+      <img
+        src={token1Img.src}
+        width={token1Img.width}
+        height={token1Img.height}
         alt=""
         class="absolute top-1/8 left-1/2 w-[120px] pointer-events-none"
         loading="lazy"
       />
-      <Image
-        src={token3Img}
+      <img
+        src={token3Img.src}
+        width={token3Img.width}
+        height={token3Img.height}
         alt=""
         class="absolute top-1/3 left-[5%] w-[94px]"
         loading="lazy"
@@ -151,27 +156,35 @@ const underlineSVGs = [
       id="rose"
       class="relative lg:col-start-2 h-screen flex items-center justify-center"
     >
-      <Image
-        src={roseImg}
+      <img
+        src={roseImg.src}
+        width={roseImg.width}
+        height={roseImg.height}
         alt=""
         class="w-[75%] md:w-[50%] h-auto lg:max-w-[380px] lg:max-h-[380px] lg:w-full mx-auto"
         loading="eager"
         fetchpriority="high"
       />
-      <Image
-        src={antennaImg}
+      <img
+        src={antennaImg.src}
+        width={antennaImg.width}
+        height={antennaImg.height}
         alt=""
         class="block lg:hidden absolute bottom-1/8 min-w-[125px] right-0 w-1/5 object-cover"
         loading="lazy"
       />
-      <Image
-        src={token4Img}
+      <img
+        src={token4Img.src}
+        width={token4Img.width}
+        height={token4Img.height}
         alt=""
         class="block w-[100px] lg:w-[140px] absolute top-[20%] left-[7%] pointer-events-none"
         loading="lazy"
       />
-      <Image
-        src={token13Img}
+      <img
+        src={token13Img.src}
+        width={token13Img.width}
+        height={token13Img.height}
         alt=""
         class="block w-[75px] lg:w-[100px] absolute bottom-[15%] left-[3%] pointer-events-none"
         loading="lazy"
@@ -182,26 +195,34 @@ const underlineSVGs = [
     <div class="hidden lg:block relative lg:col-start-1 pointer-events-none">
     </div>
     <section id="schedule" class="relative lg:col-start-2 p-6">
-      <Image
-        src={dragonRedImg}
+      <img
+        src={dragonRedImg.src}
+        width={dragonRedImg.width}
+        height={dragonRedImg.height}
         alt=""
         class="absolute left-1/2 lg:left-[-5%] -translate-x-1/2 w-full max-w-[550px] -z-10"
         loading="lazy"
       />
-      <Image
-        src={token12Img}
+      <img
+        src={token12Img.src}
+        width={token12Img.width}
+        height={token12Img.height}
         alt=""
         class="block w-[90px] lg:w-[120px] absolute top-[20%] left-[-75%]"
         loading="lazy"
       />
-      <Image
-        src={token5Img}
+      <img
+        src={token5Img.src}
+        width={token5Img.width}
+        height={token5Img.height}
         alt=""
         class="block w-[90px] lg:w-[120px] absolute top-[40%] left-[-30%]"
         loading="lazy"
       />
-      <Image
-        src={token2Img}
+      <img
+        src={token2Img.src}
+        width={token2Img.width}
+        height={token2Img.height}
         alt=""
         class="block w-[90px] lg:w-[120px] absolute top-[60%] left-[-80%]"
         loading="lazy"
@@ -246,14 +267,18 @@ const underlineSVGs = [
     <div class="hidden lg:block relative lg:col-start-1 pointer-events-none">
     </div>
     <section id="about" class="relative lg:col-start-2 text-center p-6">
-      <Image
-        src={dragonBlueImg}
+      <img
+        src={dragonBlueImg.src}
+        width={dragonBlueImg.width}
+        height={dragonBlueImg.height}
         alt=""
         class="absolute left-1/2 lg:left-[-10%] -translate-x-1/2 w-full max-w-[650px] -z-10"
         loading="lazy"
       />
-      <Image
-        src={token7Img}
+      <img
+        src={token7Img.src}
+        width={token7Img.width}
+        height={token7Img.height}
         alt=""
         class="block w-[90px] lg:w-[120px] absolute top-[-150px] right-[8%]"
         loading="lazy"
@@ -284,14 +309,18 @@ const underlineSVGs = [
     <div class="hidden lg:block relative lg:col-start-1 pointer-events-none">
     </div>
     <section id="newsletter" class="relative lg:col-start-2 p-6">
-      <Image
-        src={dragonYellowImg}
+      <img
+        src={dragonYellowImg.src}
+        width={dragonYellowImg.width}
+        height={dragonYellowImg.height}
         alt=""
         class="absolute left-1/2 lg:left-0 -translate-x-1/2 w-full max-w-[440px] -z-10 pointer-events-none"
         loading="lazy"
       />
-      <Image
-        src={token11Img}
+      <img
+        src={token11Img.src}
+        width={token11Img.width}
+        height={token11Img.height}
         alt=""
         class="block w-[90px] lg:w-[120px] absolute top-[-120px] left-[5%] pointer-events-none"
         loading="lazy"
