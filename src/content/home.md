@@ -29,7 +29,7 @@ The haptic experience of keeping in touch.
 Through radio.
 Forever.
 
-Hosting [LungA Radio School](https://www.lungaschool.is/en/radio): a-radio-making-school, making-school-over-radio.
+Hosting [A Radio School](https://www.lungaschool.is/en/radio): a-radio-making-school, making-school-over-radio.
 Generally entangled with [LungA School](http://lungaschool.is/).
 Part of the Independent Community Radio Network/[ICRN](https://icrn.live/).
 Sign up for our [newsletter](#newsletter)
