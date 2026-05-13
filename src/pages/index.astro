@@ -4,6 +4,7 @@ import { getCollection, render } from "astro:content";
 import { XMLParser } from "fast-xml-parser";
 import MainLayout from "../layouts/MainLayout.astro";
 import ArchivePlayer from "../components/ArchivePlayer.astro";
+import Newsletter from "../components/Newsletter.astro";
 import { renderMarkdown } from "../lib/markdown";
 
 import antennaImg from "../assets/images/antenna.jpg";
@@ -14,12 +15,12 @@ import token3Img from "../assets/images/token3.png";
 import token4Img from "../assets/images/token4.png";
 import token5Img from "../assets/images/token5.png";
 import token7Img from "../assets/images/token7.png";
-import token11Img from "../assets/images/token11.png";
 import token12Img from "../assets/images/token12.png";
 import token13Img from "../assets/images/token13.png";
 import dragonRedImg from "../assets/images/dragon-red-with-moon.png";
 import dragonBlueImg from "../assets/images/dragon-blue-with-moon.png";
 import dragonYellowImg from "../assets/images/dragon-yellow-with-moon.png";
+import token11Img from "../assets/images/token11.png";
 
 // --- Content (src/content/home.md) ---
 // Body        → about section (rendered as markdown with remark-breaks)
@@ -314,24 +315,7 @@ const underlineSVGs = [
         <p class="my-4">
           Follow us, our open calls, our content and community here
         </p>
-        <form id="newsletter-form" class="flex gap-2 mx-auto max-w-sm">
-          <label for="newsletter-email" class="sr-only">Email address</label>
-          <input
-            type="email"
-            name="email"
-            id="newsletter-email"
-            placeholder="Your email"
-            required
-            class="flex-1 bg-transparent border-b border-current py-1.5 outline-none"
-          />
-          <button
-            type="submit"
-            id="submit-btn"
-            class="py-1.5 text-[#1100FF] bg-transparent cursor-pointer whitespace-nowrap disabled:opacity-40"
-            >Subscribe</button
-          >
-        </form>
-        <div id="newsletter-message" class="mt-2 text-sm opacity-70"></div>
+        <Newsletter />
         {
           newsletter && (
             <div
@@ -359,43 +343,3 @@ const underlineSVGs = [
     </section>
   </div>
 </MainLayout>
-
-<script is:inline>
-  // --- Newsletter ---
-  (function () {
-    const form = document.getElementById("newsletter-form");
-    const btn = document.getElementById("submit-btn");
-    const message = document.getElementById("newsletter-message");
-    const publicationId = ""; // TODO: add your beehiiv publication ID
-
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      btn.disabled = true;
-      btn.textContent = "...";
-      message.textContent = "";
-      const email = form.querySelector('input[type="email"]').value;
-      try {
-        const res = await fetch(
-          `https://api.beehiiv.com/v2/publications/${publicationId}/subscriptions`,
-          {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-              email,
-              reactivate_existing: true,
-              send_welcome_email: true,
-            }),
-          },
-        );
-        if (res.ok) {
-          form.style.display = "none";
-          message.textContent = "You're subscribed!";
-        } else throw new Error();
-      } catch {
-        message.textContent = "Something went wrong. Please try again.";
-        btn.disabled = false;
-        btn.textContent = "Subscribe";
-      }
-    });
-  })();
-</script>

@@ -1,0 +1,31 @@
+---
+---
+
+<form id="newsletter-form" class="flex gap-2 mx-auto max-w-sm">
+  <label for="newsletter-email" class="sr-only">Email address</label>
+  <input
+    type="email"
+    name="email"
+    id="newsletter-email"
+    placeholder="Your email"
+    required
+    class="flex-1 bg-transparent border-b border-current py-1.5 outline-none"
+  />
+  <button
+    type="submit"
+    class="py-1.5 text-[#1100FF] bg-transparent cursor-pointer whitespace-nowrap"
+    >Subscribe</button
+  >
+</form>
+
+<script>
+  const form = document.getElementById("newsletter-form") as HTMLFormElement;
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const email = (form.querySelector('input[type="email"]') as HTMLInputElement).value;
+    window.open(
+      `https://magic.beehiiv.com/v1/de207d3f-3cd1-4c06-b05f-75f7e81875d9?email=${encodeURIComponent(email)}`,
+      "_blank",
+    );
+  });
+</script>

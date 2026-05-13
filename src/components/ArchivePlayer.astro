@@ -1,4 +1,9 @@
 ---
+import { Image } from "astro:assets";
+import token6Img from "../assets/images/token6.png";
+import token8Img from "../assets/images/token8.png";
+import roseImg from "../assets/images/rose.png";
+
 interface Props {
   tracks: { title: string; url: string; stream: string; date: string }[];
   archiveHtml?: string;
@@ -31,7 +36,7 @@ const { tracks, archiveHtml } = Astro.props;
         />
       )
     }
-    <h4 class="font-h0 font-serif mt-10">Recently Aired</h4>
+    <h4 class="font-h0 font-serif mt-10">Recently Archived</h4>
     <svg
       width="331"
       height="16"
@@ -141,18 +146,20 @@ const { tracks, archiveHtml } = Astro.props;
         )
       }
     </div>
-    <audio id="archive-audio" preload="none" aria-label="Archive audio player"
+    <audio id="archive-audio" preload="none" aria-label="Archive audio player" data-rose-src={roseImg.src}
     ></audio>
   </div>
-  <img
-    src="/images/token6.png"
+  <Image
+    src={token6Img}
     alt=""
     class="block w-[150px] lg:w-[200px] absolute top-[-5%] left-[-10%] lg:top-[5%] lg:left-[-20%]"
+    loading="lazy"
   />
-  <img
-    src="/images/token8.png"
+  <Image
+    src={token8Img}
     alt=""
     class="block w-[60px] lg:w-[80px] absolute top-[70%] left-[-85%]"
+    loading="lazy"
   />
 </section>
 
@@ -194,7 +201,7 @@ const { tracks, archiveHtml } = Astro.props;
           artist: "Seyðisfjörður Community Radio",
           album: "Archive - " + date,
           artwork: [
-            { src: "/images/rose.png", sizes: "512x512", type: "image/png" },
+            { src: archiveAudio.dataset.roseSrc!, sizes: "512x512", type: "image/png" },
           ],
         });
       }
